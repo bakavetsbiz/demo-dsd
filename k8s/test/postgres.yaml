@@ -21,6 +21,7 @@ spec:
               database: "test"
         commonLabels:
           env: dev
+          app: demo
   destination:
     namespace: postgresql
     server: https://kubernetes.default.svc
