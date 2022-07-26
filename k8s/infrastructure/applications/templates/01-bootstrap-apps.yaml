@@ -11,6 +11,11 @@ spec:
     path: k8s/infrastructure/charts/bootstrap-apps/
     repoURL: https://github.com/bakavetsbiz/demo-dsd.git
     targetRevision: {{ .Values.targetRevision }}
+    helm:
+      values: |        
+        installCRDs: true
+        cert:
+          sa_annotation_eks_role_arn: {{ .Values.certManager_sa_eks_role_arn }}
 
   destination:
     namespace: argocd

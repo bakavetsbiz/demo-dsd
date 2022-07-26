@@ -1,4 +1,3 @@
 targetRevision: dev
 
-bootstrap:
-  valueFile: values.yaml
+certManager_sa_eks_role_arn: arn:aws:iam::12345678901:role/cert-manager-role
