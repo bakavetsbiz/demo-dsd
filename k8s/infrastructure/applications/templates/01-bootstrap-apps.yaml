@@ -12,8 +12,7 @@ spec:
     repoURL: https://github.com/bakavetsbiz/demo-dsd.git
     targetRevision: {{ .Values.targetRevision }}
     helm:
-      values: |        
-        installCRDs: true
+      values: |
         cert:
           sa_annotation_eks_role_arn: {{ .Values.certManager_sa_eks_role_arn }}
 
