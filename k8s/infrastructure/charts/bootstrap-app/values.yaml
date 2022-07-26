@@ -1,0 +1,7 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+
+metricsServer:
+  version: 6.0.8
+
