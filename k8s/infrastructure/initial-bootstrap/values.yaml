@@ -1,9 +1,0 @@
-repoURL: https://github.com/demo/demo.git
-
-targetRevision: dev
-
-destination:
-  namespace: argo-cd-namespace
-
-source:
-  path: k8s/infrastructure

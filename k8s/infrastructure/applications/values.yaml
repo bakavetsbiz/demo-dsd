@@ -1,4 +1,4 @@
-targetRevision: main
+targetRevision: dev
 
 bootstrap:
   valueFile: values.yaml
