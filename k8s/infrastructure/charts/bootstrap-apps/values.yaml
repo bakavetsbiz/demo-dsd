@@ -5,3 +5,8 @@ spec:
 metricsServer:
   version: 6.0.8
 
+postgresql:
+  version: 11.6.19
+
+rabbitmq:
+  version: 10.1.16
