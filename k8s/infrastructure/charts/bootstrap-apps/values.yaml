@@ -13,3 +13,4 @@ rabbitmq:
 
 cert:
   version: v1.7.0
+  sa_annotation_eks_role_arn: arn:aws:iam::12345678912:role/demo-eks-cluster-cert-manager-role
