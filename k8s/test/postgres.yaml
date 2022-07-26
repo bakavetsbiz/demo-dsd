@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: infrastructure
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 11.6.19
+    chart: postgresql
+    helm:
+      values: |
+        global:
+          postgresql:
+            auth:
+              username: "test"
+              password: "test"
+              database: "test"
+        commonLabels:
+          env: dev
+  destination:
+    namespace: postgresql
+    server: https://kubernetes.default.svc
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+     - CreateNamespace=true
