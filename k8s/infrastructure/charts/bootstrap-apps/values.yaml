@@ -10,3 +10,6 @@ postgresql:
 
 rabbitmq:
   version: 10.1.16
+
+cert:
+  version: v1.7.0

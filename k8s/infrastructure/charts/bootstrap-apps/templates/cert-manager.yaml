@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  destination:
+    namespace: cert-manager
+    server: {{ .Values.spec.destination.server }}
+  source:
+    repoURL: 'https://charts.jetstack.io'
+    targetRevision: {{ .Values.cert.version }}
+    chart: cert-manager
+    helm:
+      values: |        
+        installCRDs: true
+        serviceAccount:
+          create: true
+          name: cert-manager-route53
+          annotations:
+            eks.amazonaws.com/role-arn: arn:aws:iam::849634744839:role/demo-eks-cluster-cert-manager-role
+        extraArgs: 
+        - --issuer-ambient-credentials
+  project: infrastructure
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
