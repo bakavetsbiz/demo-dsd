@@ -1,0 +1,4 @@
+targetRevision: main
+
+bootstrap:
+  valueFile: values.yaml
