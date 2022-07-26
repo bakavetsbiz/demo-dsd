@@ -44,6 +44,8 @@ spec:
       parameters:
       - name: targetRevision
         value: ${local.initial_bootstrap.targetRevision}
+      - name: certManager_sa_eks_role_arn
+        value: ${module.iam_assumable_role_admin_cert_manager.iam_role_arn}
 
   destination:
     namespace: ${local.argocd.namespace}
