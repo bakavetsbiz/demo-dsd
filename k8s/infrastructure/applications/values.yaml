@@ -1,3 +1,9 @@
 targetRevision: dev
 
 certManager_sa_eks_role_arn: arn:aws:iam::12345678901:role/cert-manager-role
+
+externalDNS:
+  serviceAccount:
+    name: external-dns
+    eksRoleARN: arn:aws:iam::12345678912:role/external-dns
+  namespace: kube-system

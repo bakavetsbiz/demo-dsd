@@ -22,6 +22,14 @@ spec:
           awsRegion: eu-west-1
           dnsZones: ["devops-lab.co.uk"]
           letsencryptServer: https://acme-v02.api.letsencrypt.org/directory
+
+        externalDNS:
+          domain: devops-lab.co.uk
+          txtOwnerId: Z04935571NDH8HTVRWFZ3
+          serviceAccount:
+            name: {{ .Values.externalDNS.serviceAccount.name }}
+            eksRoleARN: {{ .Values.externalDNS.serviceAccount.eksRoleARN }}
+          namespace: {{ .Values.externalDNS.namespace }}
         
   destination:
     namespace: argocd

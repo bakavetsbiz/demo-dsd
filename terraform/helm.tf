@@ -47,6 +47,13 @@ spec:
       - name: certManager_sa_eks_role_arn
         value: ${module.iam_assumable_role_admin_cert_manager.iam_role_arn}
 
+      - name: externalDNS.serviceAccount.name
+        value: ${local.k8s_service_account_external_dns_name}
+      - name: externalDNS.serviceAccount.eksRoleARN
+        value: ${module.iam_assumable_role_external_dns.iam_role_arn}
+      - name: externalDNS.namespace
+        value: ${local.k8s_service_account_external_dns_namespace}
+
   destination:
     namespace: ${local.argocd.namespace}
     server: https://kubernetes.default.svc
