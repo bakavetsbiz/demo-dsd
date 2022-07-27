@@ -8,6 +8,18 @@ locals {
     destination_namespace = "argocd"
     source_path           = "k8s/infrastructure/applications/"
   }
+
+  certIssuer = {
+    email = "anton.bokovets@effective-soft.com"
+    hostedZoneID = "Z04935571NDH8HTVRWFZ3"
+    awsRegion = "eu-west-1"
+    dnsZones = "devops-lab.co.uk"
+  }
+
+  externalDNS = {
+    domain = "devops-lab.co.uk"
+    txtOwnerId = "Z04935571NDH8HTVRWFZ3"
+  }
 }
 
 resource "helm_release" "argocd" {
@@ -47,6 +59,19 @@ spec:
       - name: certManager_sa_eks_role_arn
         value: ${module.iam_assumable_role_admin_cert_manager.iam_role_arn}
 
+      - name: certIssuer.email
+        value: ${local.certIssuer.email}
+      - name: certIssuer.hostedZoneID
+        value: ${local.certIssuer.hostedZoneID}
+      - name: certIssuer.awsRegion
+        value: ${local.certIssuer.awsRegion}
+      - name: certIssuer.dnsZones
+        value: ${local.certIssuer.dnsZones}
+
+      - name: externalDNS.domain
+        value: ${local.externalDNS.domain}
+      - name: externalDNS.txtOwnerId
+        value: ${local.externalDNS.txtOwnerId}
       - name: externalDNS.serviceAccount.name
         value: ${local.k8s_service_account_external_dns_name}
       - name: externalDNS.serviceAccount.eksRoleARN
