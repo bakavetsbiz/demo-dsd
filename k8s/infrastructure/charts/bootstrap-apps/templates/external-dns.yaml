@@ -27,7 +27,7 @@ spec:
           annotations:
             eks.amazonaws.com/role-arn: {{ .Values.externalDNS.serviceAccount.eksRoleARN }}
         aws:
-          region: eu-west-1
+          region: {{ .Values.awsRegion }}
           zoneType: {{ .Values.externalDNS.zoneType }}
         podSecurityContext:
           fsGroup: 65534

@@ -54,6 +54,10 @@ spec:
 
     helm:
       parameters:
+      - name: awsRegion
+        value: ${var.aws_region}
+      - name: domain
+        value: ${local.externalDNS.domain}
       - name: targetRevision
         value: ${local.initial_bootstrap.targetRevision}
       - name: certManager_sa_eks_role_arn
