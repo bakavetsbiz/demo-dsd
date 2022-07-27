@@ -15,6 +15,12 @@ spec:
     helm:
       values: |        
         installCRDs: true
+
+        prometheus:
+          enabled: true
+          servicemonitor:
+            enabled: true
+
         serviceAccount:
           create: true
           name: cert-manager-route53
