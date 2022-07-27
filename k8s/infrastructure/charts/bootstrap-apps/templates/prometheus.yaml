@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "-8"
 spec:
   destination:
-    namespace: istio-system
+    namespace: prometheus-operator
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: 'https://prometheus-community.github.io/helm-charts'
@@ -18,3 +18,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
