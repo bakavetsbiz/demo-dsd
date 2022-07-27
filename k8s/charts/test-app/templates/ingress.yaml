@@ -8,11 +8,11 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - {{ .Values.hosts.app-1 }}
-    - {{ .Values.hosts.app-2 }}
+    - {{ .Values.hosts.app1 }}
+    - {{ .Values.hosts.app2 }}
     secretName: app-tls
   rules:
-   - host: {{ .Values.hosshosts.app-1 }}
+   - host: {{ .Values.hosshosts.app1 }}
      http:
         paths:
           - pathType: Prefix
@@ -22,7 +22,7 @@ spec:
                 name: kuber-service-1
                 port: 
                   number: 80
-   - host: {{ .Values.hosts.app-2 }}
+   - host: {{ .Values.hosts.app2 }}
      http:
         paths:
           - pathType: Prefix
