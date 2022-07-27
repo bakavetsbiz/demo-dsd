@@ -22,9 +22,9 @@ locals {
   }
 
   appHosts = {
-    api-textstat = "app-demo.devops-lab.co.uk"
-    testApp1     = "app-1.devops-lab.co.uk"
-    testApp2     = "app-2.devops-lab.co.uk"
+    apitextstat = "app-demo.devops-lab.co.uk"
+    testApp1    = "app-1.devops-lab.co.uk"
+    testApp2    = "app-2.devops-lab.co.uk"
   }
 }
 
@@ -89,8 +89,8 @@ spec:
       - name: externalDNS.namespace
         value: ${local.k8s_service_account_external_dns_namespace}
 
-      - name: appHosts.api-textstat
-        value: ${local.appHosts.api-textstat}
+      - name: appHosts.apitextstat
+        value: ${local.appHosts.apitextstat}
       - name: appHosts.testApp1
         value: ${local.appHosts.testApp1}
       - name: appHosts.testApp2
