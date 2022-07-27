@@ -17,7 +17,7 @@ spec:
           sa_annotation_eks_role_arn: {{ .Values.certManager_sa_eks_role_arn }}
 
         certIssuer:
-          email: bakavets.com@gmail.com
+          email: anton.bokovets@effective-soft.com
           hostedZoneID: Z04935571NDH8HTVRWFZ3
           awsRegion: eu-west-1
           dnsZones: ["devops-lab.co.uk"]
