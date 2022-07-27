@@ -29,6 +29,8 @@ spec:
             name: {{ .Values.externalDNS.serviceAccount.name }}
             eksRoleARN: {{ .Values.externalDNS.serviceAccount.eksRoleARN }}
           namespace: {{ .Values.externalDNS.namespace }}
+
+        domain: devops-lab.co.uk
         
   destination:
     namespace: argocd

@@ -1,5 +1,7 @@
 targetRevision: dev
 
+domain: devops-lab.co.uk
+
 certManager_sa_eks_role_arn: arn:aws:iam::12345678901:role/cert-manager-role
 
 externalDNS:
