@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - argocd.{{ .Values.domain }}
-    secretName: argocd-tls
+    secretName: argocd-cert
   rules:
    - host: argocd.{{ .Values.domain }}
      http:
