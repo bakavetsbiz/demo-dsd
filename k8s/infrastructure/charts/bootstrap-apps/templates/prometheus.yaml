@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "-8"
+spec:
+  destination:
+    namespace: istio-system
+    server: {{ .Values.spec.destination.server }}
+  source:
+    repoURL: 'https://prometheus-community.github.io/helm-charts'
+    targetRevision: {{ .Values.prometheus.version }}
+    chart: kube-prometheus-stack
+
+  project: infrastructure
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -38,3 +38,6 @@ externalDNS:
   serviceAccount:
     name: external-dns
     eksRoleARN: arn:aws:iam::12345678912:role/external-dns
+
+prometheus:
+  version: 38.0.2
