@@ -13,7 +13,7 @@ spec:
     targetRevision: {{ .Values.targetRevision }}
     helm:
       values: |
-        hosts: app-demo.devops-lab.co.uk
+        hosts: {{ .Values.appHosts.api-textstat }}
 
   destination:
     server: 'https://kubernetes.default.svc'

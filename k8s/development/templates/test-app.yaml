@@ -14,8 +14,8 @@ spec:
     helm:
       values: |
         hosts:
-          app1: app-1.devops-lab.co.uk
-          app2: app-2.devops-lab.co.uk
+          app1: {{ .Values.appHosts.testApp1 }}
+          app2: {{ .Values.appHosts.testApp2 }}
 
   destination:
     server: 'https://kubernetes.default.svc'
