@@ -14,7 +14,7 @@ spec:
     helm:
       values: |
         appHosts:
-          api-textstat: {{ .Values.appHosts.api-textstat }}
+          apitextstat: {{ .Values.appHosts.apitextstat }}
           testApp1: {{ .Values.appHosts.testApp1 }}
           testApp2: {{ .Values.appHosts.testApp2 }}
 
