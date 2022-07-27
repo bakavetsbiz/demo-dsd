@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/bakavetsbiz/demo-dsd.git
     targetRevision: {{ .Values.targetRevision }}
-    path: infrastructure/charts/certificates
+    path: k8s/infrastructure/charts/certificates/
     helm:
       values: |
         email: {{ .Values.certIssuer.email }}
