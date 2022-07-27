@@ -8,7 +8,7 @@ metadata:
 spec:
   project: development
   source:
-    path: k8s/charts/charts/test-app/
+    path: k8s/charts/test-app/
     repoURL: https://github.com/bakavetsbiz/demo-dsd.git
     targetRevision: {{ .Values.targetRevision }}
     helm:
