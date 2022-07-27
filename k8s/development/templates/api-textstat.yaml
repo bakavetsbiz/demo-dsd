@@ -13,7 +13,7 @@ spec:
     targetRevision: {{ .Values.targetRevision }}
     helm:
       values: |
-        hosts: {{ .Values.appHosts.apitextstat }}
+        host: {{ .Values.appHosts.apitextstat }}
 
   destination:
     server: 'https://kubernetes.default.svc'
