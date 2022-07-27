@@ -1,4 +1,4 @@
-To deploy infrastructure do the folowing:
+### To deploy infrastructure do the folowing:
 
 Create IAM User in AWS with Admin permissions and create Access keys.
 
@@ -13,7 +13,7 @@ cd terraform
 terraform init
 ```
 
-Fill the file: terraform/helm.tf with the appropriate values.
+Fill the file terraform/helm.tf with the appropriate values.
 
 ```
 terraform plan
