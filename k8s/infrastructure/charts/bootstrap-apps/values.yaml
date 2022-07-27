@@ -41,3 +41,5 @@ externalDNS:
 
 prometheus:
   version: 38.0.2
+
+domain: example.com
