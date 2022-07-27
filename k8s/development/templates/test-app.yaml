@@ -15,7 +15,7 @@ spec:
       values: |
         hosts:
           app1: app-1.devops-lab.co.uk
-          app2: app-1.devops-lab.co.uk
+          app2: app-2.devops-lab.co.uk
 
   destination:
     server: 'https://kubernetes.default.svc'
