@@ -12,7 +12,7 @@ spec:
     - {{ .Values.hosts.app2 }}
     secretName: app-tls
   rules:
-   - host: {{ .Values.hosshosts.app1 }}
+   - host: {{ .Values.hosts.app1 }}
      http:
         paths:
           - pathType: Prefix
