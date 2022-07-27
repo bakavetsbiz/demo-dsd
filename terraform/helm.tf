@@ -10,14 +10,14 @@ locals {
   }
 
   certIssuer = {
-    email = "anton.bokovets@effective-soft.com"
+    email        = "anton.bokovets@effective-soft.com"
     hostedZoneID = "Z04935571NDH8HTVRWFZ3"
-    awsRegion = "eu-west-1"
-    dnsZones = "devops-lab.co.uk"
+    awsRegion    = "eu-west-1"
+    dnsZones     = "devops-lab.co.uk"
   }
 
   externalDNS = {
-    domain = "devops-lab.co.uk"
+    domain     = "devops-lab.co.uk"
     txtOwnerId = "Z04935571NDH8HTVRWFZ3"
   }
 }
